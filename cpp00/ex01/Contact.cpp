@@ -8,14 +8,19 @@ void	Contact::addContact() {
 
 	std::cout << "plese enter your first name." << std::endl;
 	std::cin >> this->first_name;
+	std::cin.clear();
 	std::cout << "plese enter your last name." << std::endl;
 	std::cin >> this->last_name;
+	std::cin.clear();
 	std::cout << "plese enter your nick name." << std::endl;
 	std::cin >> this->nick_name;
+	std::cin.clear();
 	std::cout << "plese enter your phone number." << std::endl;
 	std::cin >> this->phone_number;
+	std::cin.clear();
 	std::cout << "plese enter your darkest secret." << std::endl;
 	std::cin >> this->darkest_secret;
+	std::cin.clear();
 
 	this->is_empty = false;
 	std::cout << "\033[32m add a new contact successfully \033[m" << std::endl;
@@ -27,6 +32,8 @@ bool	Contact::getIsEmpty() {
 }
 
 void	Contact::displayOverview(size_t index) {
+	// Todo: 10行で制限できてない.
+	// Todo: 10文字目を '.' にできてない.
 	std::cout << std::setw(10) << std::right << index << '|';
 	std::cout << std::setw(10) << std::right << this->first_name << '|';
 	std::cout << std::setw(10) << std::right << this->last_name << '|';
