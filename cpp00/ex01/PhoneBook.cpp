@@ -23,8 +23,7 @@ void	PhoneBook::searchCmd() {
 
 	// Todo: SEARCH test などで無限ループする.
 	std::cout << "\033[33m plese choose target index. \033[m" << std::endl;
-	std::cin >> target_index;
-	std::cin.clear();
+	std::getline(std::cin, target_index);
 	if (target_index < 0 || target_index >= index || target_index > 7) {
 		std::cout << "\033[31m error: target index is out of range. \033[m" << std::endl;
 		return ;

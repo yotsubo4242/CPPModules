@@ -35,9 +35,9 @@ void	Contact::displayOverview(size_t index) {
 	// Todo: 10行で制限できてない.
 	// Todo: 10文字目を '.' にできてない.
 	std::cout << std::setw(10) << std::right << index << '|';
-	std::cout << std::setw(10) << std::right << this->first_name << '|';
-	std::cout << std::setw(10) << std::right << this->last_name << '|';
-	std::cout << std::setw(10) << std::right << this->nick_name << std::endl;
+	std::cout << std::setw(10) << std::right << this->first_name.substr(0, 9) + "." << '|';
+	std::cout << std::setw(10) << std::right << this->last_name.substr(0, 9) + "." << '|';
+	std::cout << std::setw(10) << std::right << this->nick_name.substr(0, 9) + "." << std::endl;
 	return ;
 }
 
