@@ -1,7 +1,5 @@
-NAME=zombieHorde
-SRCS=main.cpp \
-	Zombie.cpp \
-	zombieHorde.cpp
+NAME=brain
+SRCS=main.cpp
 OBJS=$(SRCS:.cpp=.o)
 CC=c++
 FLAGS=-Wall -Wextra -Werror -std=c++98
