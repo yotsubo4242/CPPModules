@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <PhoneBook.hpp>
 
 int	main(void)
@@ -10,7 +11,6 @@ int	main(void)
 	{
 		std::cout << "\033[33m plese input commands ( ADD, SEARCH, EXIT ) \033[m" << std::endl;
 		std::getline(std::cin, cmd);
-		std::cin.clear();
 		phone_book.execCmds(cmd);
 	}
 	return (0);

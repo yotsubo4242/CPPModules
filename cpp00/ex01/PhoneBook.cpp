@@ -12,8 +12,9 @@ void	PhoneBook::addCmd() {
 }
 
 void	PhoneBook::searchCmd() {
-	size_t	index;
-	size_t	target_index;
+	size_t		index;
+	std::string	target_index_str;
+	size_t		target_index;
 
 	for (index = 0; index < 8; index++) {
 		if (this->contacts[index].getIsEmpty() == true)
@@ -23,7 +24,8 @@ void	PhoneBook::searchCmd() {
 
 	// Todo: SEARCH test などで無限ループする.
 	std::cout << "\033[33m plese choose target index. \033[m" << std::endl;
-	std::getline(std::cin, target_index);
+	std::getline(std::cin, target_index_str);
+	target_index = atoi(target_index_str.c_str());
 	if (target_index < 0 || target_index >= index || target_index > 7) {
 		std::cout << "\033[31m error: target index is out of range. \033[m" << std::endl;
 		return ;

@@ -1,8 +1,7 @@
 NAME=zombie
 SRCS=main.cpp \
 	Zombie.cpp \
-	newZombie.cpp \
-	randomChump.cpp
+	zombieHorde.cpp
 OBJS=$(SRCS:.cpp=.o)
 CC=c++
 FLAGS=-Wall -Wextra -Werror -std=c++98
