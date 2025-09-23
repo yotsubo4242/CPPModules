@@ -6,15 +6,13 @@
 
 class HumanA {
 	public:
-		HumanA(std::string name, Weapon &weapon) {
+		HumanA(std::string name, Weapon &weapon): weapon(weapon) {
 			this->name = name;
-			this->weapon = weapon;
-		};
+		}
 		void	attack();
 
 	private:
 		std::string	name;
-		// Todo: これダメそう... うーーん
 		Weapon		&weapon;
 };
 
