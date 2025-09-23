@@ -2,6 +2,22 @@
 #include <iostream>
 #include <sstream>
 
+bool	validate_files(std::ifstream &in_file, std::ofstream &out_file) {
+	if (!in_file) {
+		std::cerr << "\033[31m Error occured: Input file \033[m" << std::endl;
+		in_file.close();
+		out_file.close();
+		return (false);
+	}
+	if (!out_file) {
+		std::cerr << "\033[31m Error occured: Output file \033[m" << std::endl;
+		in_file.close();
+		out_file.close();
+		return (false);
+	}
+	return (true);
+}
+
 std::string	make_replaced_content(std::string content, std::string s1, std::string s2) {
 	std::string::size_type 	prev_pos = 0;
 	std::string::size_type 	pos = content.find(s1);
@@ -34,18 +50,8 @@ int	main(int argc, char *argv[]) {
 	std::stringstream	ss;
 	std::string		replaced_content;
 
-	if (!in_file) {
-		std::cerr << "\033[31m Error occured: Input file \033[m" << std::endl;
-		in_file.close();
-		out_file.close();
+	if (!validate_files(in_file, out_file))
 		return (1);
-	}
-	if (!out_file) {
-		std::cerr << "\033[31m Error occured: Output file \033[m" << std::endl;
-		in_file.close();
-		out_file.close();
-		return (1);
-	}
 	ss << in_file.rdbuf();
 	in_file_content = ss.str();
 	replaced_content = make_replaced_content(in_file_content, s1, s2);
