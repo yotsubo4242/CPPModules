@@ -11,7 +11,7 @@ void	Harl::complain(std::string level) {
 		i++;
 	}
 	if (i == 4)
-		std::cerr << "Error: no function much." << std::endl;
+		std::cerr << "\033[31m Error: no function much. \033[m" << std::endl;
 	else
 		(this->*operation[i])();
 	return ;
