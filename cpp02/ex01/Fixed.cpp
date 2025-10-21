@@ -29,6 +29,11 @@ Fixed	&Fixed::operator=(const Fixed &other) {
 	return (*this);
 };
 
+std::ostream&	Fixed::operator<<(std::ostream &os, const Fixed &operand) {
+	os << operand->toFloat();
+	return (os);
+};
+
 int	Fixed::getRawBits() const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->raw);

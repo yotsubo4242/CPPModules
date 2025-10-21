@@ -10,11 +10,12 @@ class Fixed {
 		Fixed(const int i_value);
 		Fixed(const float f_value);
 		~Fixed();
-		Fixed	&operator=(const Fixed &other);
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-		float	toFloat(void) const;
-		int		toInt(void) const;
+		Fixed			&operator=(const Fixed &other);
+		std::ostream	&operator<<(std::ostream &os);
+		int				getRawBits(void) const;
+		void			setRawBits(int const raw);
+		float			toFloat(void) const;
+		int				toInt(void) const;
 
 	private:
 		static const int	fractional_bits = 8;
