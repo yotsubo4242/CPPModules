@@ -8,7 +8,7 @@ class Animal {
 	public:
 		Animal();
 		~Animal();
-		virtual	void	makeSound() = 0;
+		virtual	void	makeSound();
 	protected:
 		std::string	type;
 };

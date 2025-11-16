@@ -2,7 +2,10 @@ NAME=Polymorphism
 SRCS=main.cpp \
 	Animal.cpp \
 	Dog.cpp \
-	Cat.cpp
+	Cat.cpp \
+	WrongAnimal.cpp \
+	WrongDog.cpp \
+	WrongCat.cpp
 OBJS=$(SRCS:.cpp=.o)
 CC=c++
 FLAGS=-Wall -Wextra -Werror -std=c++98
