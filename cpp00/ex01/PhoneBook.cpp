@@ -3,6 +3,15 @@
 #include <cstdlib>
 #include <PhoneBook.hpp>
 
+bool	is_validated_index(std::string str) {
+	for (std::size_t i = 0; i < str.length(); i++)
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (false);
+	}
+	return (true);
+}
+
 void	PhoneBook::addCmd() {
 	this->contacts[cur_index].addContact();
 	this->cur_index++;
@@ -24,7 +33,13 @@ void	PhoneBook::searchCmd() {
 
 	// Todo: SEARCH test などで無限ループする.
 	std::cout << "\033[33m plese choose target index. \033[m" << std::endl;
-	std::getline(std::cin, target_index_str);
+	if (std::getline(std::cin, target_index_str) == 0)
+		std::exit(1);
+	if (!is_validated_index(target_index_str))
+	{
+		std::cout << "\033[31m error: plese input number only\033[m" << std::endl;
+		return ;
+	}
 	target_index = atoi(target_index_str.c_str());
 	if (target_index < 0 || target_index >= index || target_index > 7) {
 		std::cout << "\033[31m error: target index is out of range. \033[m" << std::endl;

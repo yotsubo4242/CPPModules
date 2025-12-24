@@ -1,7 +1,9 @@
-NAME=phonebook
-SRCS= main.cpp \
-	Contact.cpp \
-	PhoneBook.cpp
+NAME=Polymorphism
+SRCS=main.cpp \
+	Animal.cpp \
+	Dog.cpp \
+	Cat.cpp \
+	Brain.cpp
 OBJS=$(SRCS:.cpp=.o)
 CC=c++
 FLAGS=-Wall -Wextra -Werror -std=c++98
@@ -23,4 +25,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean re
