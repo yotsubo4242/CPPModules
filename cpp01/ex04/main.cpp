@@ -38,6 +38,7 @@ int	main(int argc, char *argv[]) {
 	if (argc != 4) {
 		std::cerr << "This program need 3 variables ( ./SedIsForLosers <filename> <s1> <s2> )." << std::endl;
 		std::cerr << "Please try again..." << std::endl;
+		return (1);
 	}
 
 	const std::string		in_file_name(argv[1]);
