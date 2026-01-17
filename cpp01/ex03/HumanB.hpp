@@ -6,10 +6,7 @@
 
 class HumanB {
 	public:
-		HumanB(std::string name) {
-			this->name = name;
-			this->weapon = NULL;
-		};
+		HumanB(std::string name);
 		void	attack();
 		void	setWeapon(Weapon &weapon);
 

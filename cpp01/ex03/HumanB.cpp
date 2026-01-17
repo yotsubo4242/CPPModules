@@ -1,5 +1,9 @@
 #include <HumanB.hpp>
 
+HumanB::HumanB(std::string name): name(name), weapon(NULL) {
+	return ;
+};
+
 void	HumanB::attack(void) {
 	if (this->weapon != NULL)
 		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
