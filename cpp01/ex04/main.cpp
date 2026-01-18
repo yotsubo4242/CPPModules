@@ -2,17 +2,17 @@
 #include <iostream>
 #include <sstream>
 
-bool	validate_files(std::ifstream &in_file, std::ofstream &out_file) {
-	if (!in_file) {
+bool	validate_infile(std::ifstream &in_file) {
+	if (in_file.is_open() == false) {
 		std::cerr << "\033[31m Error occured: Input file \033[m" << std::endl;
-		in_file.close();
-		out_file.close();
 		return (false);
 	}
-	if (!out_file) {
+	return (true);
+}
+
+bool	validate_outfile(std::ofstream &out_file) {
+	if (out_file.is_open() == false) {
 		std::cerr << "\033[31m Error occured: Output file \033[m" << std::endl;
-		in_file.close();
-		out_file.close();
 		return (false);
 	}
 	return (true);
@@ -44,15 +44,25 @@ int	main(int argc, char *argv[]) {
 	const std::string		in_file_name(argv[1]);
 	std::ifstream	in_file(argv[1]);
 	const std::string		out_file_name = in_file_name + ".replace";
-	std::ofstream	out_file(out_file_name.c_str());
 	std::string		s1(argv[2]);
 	std::string		s2(argv[3]);
 	std::string		in_file_content;
 	std::stringstream	ss;
 	std::string		replaced_content;
-
-	if (!validate_files(in_file, out_file))
+	
+	if (s1.empty()) {
+		std::cerr << "\033[31m Error occured: s1 is empty string. \033[m" << std::endl;
 		return (1);
+	}
+	if (!validate_infile(in_file))
+		return (1);
+
+	std::ofstream	out_file(out_file_name.c_str());
+
+	if (!validate_outfile(out_file)) {
+		in_file.close();
+		return (1);
+	}
 	ss << in_file.rdbuf();
 	in_file_content = ss.str();
 	replaced_content = make_replaced_content(in_file_content, s1, s2);

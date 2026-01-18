@@ -6,9 +6,7 @@
 
 class HumanA {
 	public:
-		HumanA(std::string name, Weapon &weapon): weapon(weapon) {
-			this->name = name;
-		}
+		HumanA(std::string name, Weapon &weapon);
 		void	attack();
 
 	private:

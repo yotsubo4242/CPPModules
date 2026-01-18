@@ -3,12 +3,8 @@
 class Zombie {
 	public: 
 		void	announce(void);
-		Zombie(std::string name) {
-			this->name = name;
-		}
-		~Zombie() {
-			std::cout << "destructed zombie's name is " << this->name << std::endl;
-		};
+		Zombie(std::string name);
+		~Zombie();
 	
 	private:
 		std::string	name;

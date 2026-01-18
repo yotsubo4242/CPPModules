@@ -11,7 +11,6 @@ class Fixed {
 		Fixed(const float f_value);
 		~Fixed();
 		Fixed			&operator=(const Fixed &other);
-		std::ostream	&operator<<(std::ostream &os);
 		int				getRawBits(void) const;
 		void			setRawBits(int const raw);
 		float			toFloat(void) const;
@@ -21,5 +20,7 @@ class Fixed {
 		static const int	fractional_bits = 8;
 		int			raw;
 };
+
+std::ostream	&operator<<(std::ostream &os, const Fixed &value);
 
 #endif
