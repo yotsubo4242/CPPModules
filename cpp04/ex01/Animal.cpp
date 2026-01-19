@@ -22,7 +22,7 @@ Animal	&Animal::operator=(const Animal &other) {
 	return (*this);
 };
 
-void	Animal::makeSound() {
+void	Animal::makeSound() const {
 	std::cout << "pikapika" << std::endl;
 };
 

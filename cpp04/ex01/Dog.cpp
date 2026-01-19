@@ -2,7 +2,7 @@
 
 Dog::Dog() {
 	std::cout << "This is Dog Constructor!" << std::endl;
-	this->type = "dog";
+	this->type = "Dog";
 	this->brain = new Brain();
 };
 
@@ -27,6 +27,6 @@ Dog &Dog::operator=(const Dog &other) {
 	return (*this);
 };
 
-void	Dog::makeSound() {
+void	Dog::makeSound() const {
 	std::cout << "Woof" << std::endl;
 };

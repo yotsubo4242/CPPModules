@@ -2,7 +2,7 @@
 
 Cat::Cat() {
 	std::cout << "This is Cat Constructor!" << std::endl;
-	this->type = "cat";
+	this->type = "Cat";
 	this->brain = new Brain();
 };
 

@@ -1,7 +1,7 @@
 #include "Cat.hpp"
 
 Cat::Cat() {
-	this->type = "cat";
+	this->type = "Cat";
 	std::cout << "This is Cat Constructor!" << std::endl;
 };
 

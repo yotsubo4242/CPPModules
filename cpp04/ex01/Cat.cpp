@@ -2,7 +2,7 @@
 
 Cat::Cat() {
 	std::cout << "This is Cat Constructor!" << std::endl;
-	this->type = "cat";
+	this->type = "Cat";
 	this->brain = new Brain();
 };
 
@@ -27,6 +27,6 @@ Cat &Cat::operator=(const Cat &other) {
 	return (*this);
 };
 
-void	Cat::makeSound() {
+void	Cat::makeSound() const {
 	std::cout << "Meow" << std::endl;
 };
