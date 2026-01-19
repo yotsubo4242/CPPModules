@@ -1,13 +1,15 @@
 #ifndef CAT_H
 # define CAT_H
 
-#include <Animal.hpp>
+#include "Animal.hpp"
 
 class Cat: public Animal {
 	public:
 		Cat();
+		Cat(const Cat &other);
 		~Cat();
-		void	makeSound();
+		Cat &operator=(const Cat &other);
+		void	makeSound() const;
 };
 
 #endif
