@@ -26,5 +26,7 @@ int	main(void) {
 		Dog	tmp = basic;
 	}
 
+	//Animal	tmp;
+
 	return (0);
 }
