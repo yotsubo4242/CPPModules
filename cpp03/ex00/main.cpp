@@ -1,4 +1,4 @@
-#include <ClapTrap.hpp>
+#include "ClapTrap.hpp"
 
 int	main(void) {
 	ClapTrap Orianna;
@@ -9,3 +9,10 @@ int	main(void) {
 	Blitzcrank.beRepaired(0);
 	return (0);
 }
+
+/*
+ClapTrap
+	- HP: 10
+	- EP: 10
+	- AD: 0
+*/

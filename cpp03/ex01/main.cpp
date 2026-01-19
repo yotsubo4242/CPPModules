@@ -1,5 +1,5 @@
-#include <ClapTrap.hpp>
-#include <ScavTrap.hpp>
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void) {
 	ScavTrap Orianna;
@@ -10,3 +10,15 @@ int	main(void) {
 	Orianna.guardGate();
 	return (0);
 }
+
+/*
+ClapTrap
+	- HP: 10
+	- EP: 10
+	- AD: 0
+
+ScavTrap
+	- HP: 100
+	- EP: 50
+	- AD: 20
+*/

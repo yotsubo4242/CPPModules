@@ -2,17 +2,17 @@ NAME=ClapTrap
 SRCS=main.cpp \
 	ClapTrap.cpp
 OBJS=$(SRCS:.cpp=.o)
-CC=c++
+CXX=c++
 FLAGS=-Wall -Wextra -Werror -std=c++98
 INCLUDE=-I.
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(INCLUDE) -o $(NAME) $(OBJS)
+	$(CXX) $(FLAGS) $(INCLUDE) -o $(NAME) $(OBJS)
 
 %.o: %.cpp
-	$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
+	$(CXX) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean: 
 	$(RM) $(OBJS)
