@@ -3,11 +3,14 @@
 
 # include <iostream>
 # include <stdexcept>
+# include "Form.hpp"
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"
 # define YELLOW "\033[33m"
 # define RES "\033[m"
+
+class Form;
 
 class Bureaucrat
 {
@@ -26,6 +29,7 @@ class Bureaucrat
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
+		void signForm(Form& form);
 
 		class GradeTooHighException : public std::exception
 		{

@@ -59,5 +59,13 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << std::endl;
+	std::cout << GREEN "Test for out stream" RES << std::endl;
+	std::cout << "↓↓↓" << std::endl;
+
+	Bureaucrat e("e", 75);
+	std::cout << e << std::endl;
+
 	return 0;
 }
