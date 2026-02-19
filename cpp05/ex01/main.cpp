@@ -69,5 +69,19 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
+	std::cout << "\n" << GREEN << "Test 6: signForm" << RES << std::endl;
+	std::cout << "↓------------------------------↓" << std::endl;
+	try
+	{
+		Bureaucrat b6("B6", 2);
+		Form f6("F6", 1, 1);
+		b6.signForm(f6);
+		std::cout << f6 << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
 	return 0;
 }
