@@ -70,3 +70,9 @@ int	Span::longestSpan()
 	}
 	return max - min;
 }
+
+void Span::fillWithNums(const int *nums, unsigned int count)
+{
+	for (unsigned int i = 0; i < count && i < _N; i++)
+		addNumber(nums[i]);
+}

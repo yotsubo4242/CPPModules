@@ -15,6 +15,7 @@ class Span {
 		void addNumber(int num);
 		int shortestSpan();
 		int longestSpan();
+		void fillWithNums(const int *nums, unsigned int count);
 	private:
 		unsigned int _N;
 		unsigned int _size;
