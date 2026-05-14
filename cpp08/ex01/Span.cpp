@@ -38,3 +38,35 @@ void Span::addNumber(int num)
 }
 
 
+int	Span::shortestSpan()
+{
+	if (_size < 2)
+		throw std::out_of_range("Not enough numbers to find a span");
+	int minSpan = INT_MAX;
+	for (unsigned int i = 0; i < _size - 1; i++)
+	{
+		for (unsigned int j = i + 1; j < _size; j++)
+		{
+			int span = std::abs(_array[i] - _array[j]);
+			if (span < minSpan)
+				minSpan = span;
+		}
+	}
+	return minSpan;
+}
+
+int	Span::longestSpan()
+{
+	if (_size < 2)
+		throw std::out_of_range("Not enough numbers to find a span");
+	int min = INT_MAX;
+	int max = INT_MIN;
+	for (unsigned int i = 0; i < _size; i++)
+	{
+		if (_array[i] < min)
+			min = _array[i];
+		if (_array[i] > max)
+			max = _array[i];
+	}
+	return max - min;
+}

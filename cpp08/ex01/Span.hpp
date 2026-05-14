@@ -1,6 +1,10 @@
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
+#include <stdexcept>
+#include <climits>
+#include <cmath>
+
 class Span {
 	public:
 		Span();
