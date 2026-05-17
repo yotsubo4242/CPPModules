@@ -3,6 +3,7 @@
 
 # include "AForm.hpp"
 # include <ctime>
+# include <cstdlib.h>
 
 class RobotomyRequestForm : public AForm
 {
