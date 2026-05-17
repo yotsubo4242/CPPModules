@@ -23,6 +23,10 @@ class Intern {
 
 		FormType getFormType(const std::string& formName);
 		AForm* makeForm(const std::string& formName, const std::string& target);
+
+		AForm *createShrubberyCreationForm(const std::string& target);
+		AForm *createRobotomyRequestForm(const std::string& target);
+		AForm *createPresidentialPardonForm(const std::string& target);
 };
 
 #endif
