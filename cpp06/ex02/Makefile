@@ -8,7 +8,7 @@ SRCS=main.cpp \
 		identify.cpp
 OBJS=$(SRCS:.cpp=.o)
 CC=c++
-FLAGS=-Wall -Wextra -Werror -std=c++98
+FLAGS=-Wall -Wextra -Werror -std=c++98 -pedantic
 INCLUDE=-I.
 
 all: $(NAME)

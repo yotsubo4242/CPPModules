@@ -1,14 +1,11 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-#include <ctime>
+#include <cstdlib>
 
 Base *generate(void)
 {
-    unsigned long now = std::time(0);
-    int random = static_cast<int>(now % 3);
-
-    switch (random)
+    switch (std::rand() % 4)
     {
         case 0:
             return new A();
