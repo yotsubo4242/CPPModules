@@ -26,9 +26,14 @@ bool ScalarConverter::edgecaseConverter(const std::string& literal) {
 
 bool ScalarConverter::isValidLiteral(const std::string& literal) {
     char *endptr = NULL;
-    if (literal.empty())
+    if (literal.empty()) {
         return false;
-    (void)std::strtod(literal.c_str(), &endptr);
+	}
+	try {
+		(void)std::strtod(literal.c_str(), &endptr);
+	} catch (...) {
+		return false;
+	}
     return (*endptr == '\0' || (*endptr == 'f' && *(endptr + 1) == '\0') || (*endptr == 'F' && *(endptr + 1) == '\0'));
 }
 
