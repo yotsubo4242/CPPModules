@@ -3,7 +3,8 @@
 
 #include <stdexcept>
 #include <climits>
-#include <cmath>
+#include <algorithm>
+#include <vector>
 
 class Span {
 	public:
@@ -15,7 +16,17 @@ class Span {
 		void addNumber(int num);
 		int shortestSpan();
 		int longestSpan();
-		void fillWithNums(const int *nums, unsigned int count);
+
+		template <typename Iterator>
+		void addNumbers(Iterator begin, Iterator end)
+		{
+			while (begin != end)
+			{
+				addNumber(*begin);
+				++begin;
+			}
+		}
+
 	private:
 		unsigned int _N;
 		unsigned int _size;

@@ -1,4 +1,5 @@
 #include "Span.hpp"
+#include <algorithm>
 
 Span::Span() : _N(0), _size(0), _array(NULL) {}
 
@@ -42,15 +43,14 @@ int	Span::shortestSpan()
 {
 	if (_size < 2)
 		throw std::out_of_range("Not enough numbers to find a span");
+	std::vector<int> sorted(_array, _array + _size);
+	std::sort(sorted.begin(), sorted.end());
 	int minSpan = INT_MAX;
 	for (unsigned int i = 0; i < _size - 1; i++)
 	{
-		for (unsigned int j = i + 1; j < _size; j++)
-		{
-			int span = std::abs(_array[i] - _array[j]);
-			if (span < minSpan)
-				minSpan = span;
-		}
+		int span = sorted[i + 1] - sorted[i];
+		if (span < minSpan)
+			minSpan = span;
 	}
 	return minSpan;
 }
@@ -59,20 +59,7 @@ int	Span::longestSpan()
 {
 	if (_size < 2)
 		throw std::out_of_range("Not enough numbers to find a span");
-	int min = INT_MAX;
-	int max = INT_MIN;
-	for (unsigned int i = 0; i < _size; i++)
-	{
-		if (_array[i] < min)
-			min = _array[i];
-		if (_array[i] > max)
-			max = _array[i];
-	}
+	int min = *std::min_element(_array, _array + _size);
+	int max = *std::max_element(_array, _array + _size);
 	return max - min;
-}
-
-void Span::fillWithNums(const int *nums, unsigned int count)
-{
-	for (unsigned int i = 0; i < count && i < _N; i++)
-		addNumber(nums[i]);
 }
