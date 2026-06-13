@@ -6,7 +6,7 @@ template <typename T>
 Array<T>::Array(const unsigned int n) : array(NULL), n(n) {
     if (this->n == 0)
         return;
-    this->array = new T[this->n];
+    this->array = new T[this->n]();
 }
 
 template <typename T>
@@ -47,7 +47,7 @@ T &Array<T>::operator[](const unsigned int i) {
 template <typename T>
 const T &Array<T>::operator[](const unsigned int i) const {
     if (i >= n)
-        throw std::exception("Array index out of range");
+        throw std::out_of_range("Array index out of range");
     return array[i];
 }
 

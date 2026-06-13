@@ -7,6 +7,11 @@
 #define BLUE "\033[34m"
 #define RES "\033[0m"
 
+//void addOne(const int &n)
+//{
+//	std::cout << "this is addOne(const int &n): n = " << n << std::endl;
+//}
+
 void addOne(int &n)
 {
 	n += 1;
