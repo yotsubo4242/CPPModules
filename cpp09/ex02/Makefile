@@ -1,17 +1,16 @@
 NAME=a.out
 SRCS=main.cpp
 OBJS=$(SRCS:.cpp=.o)
-CC=c++
-FLAGS=-Wall -Wextra -Werror -std=c++98
-INCLUDE=-I.
+CXX=c++
+FLAGS=-Wall -Wextra -Werror -std=c++98 -pedantic
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(INCLUDE) -o $(NAME) $(OBJS)
+	$(CC) $(FLAGS) -o $(NAME) $(OBJS)
 
 %.o: %.cpp
-	$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean: 
 	$(RM) $(OBJS)
