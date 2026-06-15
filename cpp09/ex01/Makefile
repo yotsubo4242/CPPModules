@@ -1,5 +1,6 @@
-NAME=a.out
-SRCS=main.cpp
+NAME=RPN
+SRCS=main.cpp \
+		RPN.cpp
 OBJS=$(SRCS:.cpp=.o)
 CXX=c++
 FLAGS=-Wall -Wextra -Werror -std=c++98 -pedantic
@@ -7,10 +8,10 @@ FLAGS=-Wall -Wextra -Werror -std=c++98 -pedantic
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJS)
+	$(CXX) $(FLAGS) -o $(NAME) $(OBJS)
 
 %.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CXX) $(FLAGS) -c $< -o $@
 
 clean: 
 	$(RM) $(OBJS)
