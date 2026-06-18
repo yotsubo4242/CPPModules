@@ -68,14 +68,12 @@ void PmergeMe::printAfter() const
 
 void PmergeMe::printTimeVector() const
 {
-    std::cout << "Time to process a range of " << _vec.size()
-               << " elements with std::vector : " << _vectorTime << " us" << std::endl;
+    std::cout << "Time to process a range of " << _vec.size() << " elements with std::vector : " << _vectorTime << " us" << std::endl;
 }
 
 void PmergeMe::printTimeDeque() const
 {
-    std::cout << "Time to process a range of " << _deq.size()
-               << " elements with std::deque : " << _dequeTime << " us" << std::endl;
+    std::cout << "Time to process a range of " << _deq.size() << " elements with std::deque : " << _dequeTime << " us" << std::endl;
 }
 
 double PmergeMe::elapsedMicro(const struct timeval& start, const struct timeval& end)
@@ -105,8 +103,7 @@ void PmergeMe::sortVector()
     _vectorTime = elapsedMicro(start, end);
 }
 
-void PmergeMe::insertSortedVector(std::vector<int>& mainChain, int id,
-                                   std::vector<int>& values, size_t rangeEnd)
+void PmergeMe::insertSortedVector(std::vector<int>& mainChain, int id, std::vector<int>& values, size_t rangeEnd)
 {
     int value = values[id];
     size_t lo = 0;
@@ -123,8 +120,7 @@ void PmergeMe::insertSortedVector(std::vector<int>& mainChain, int id,
     mainChain.insert(mainChain.begin() + lo, id);
 }
 
-std::vector<int> PmergeMe::mergeInsertSortVector(std::vector<int> ids,
-                                                  std::vector<int>& values)
+std::vector<int> PmergeMe::mergeInsertSortVector(std::vector<int> ids, std::vector<int>& values)
 {
     if (ids.size() <= 1)
         return ids;
@@ -236,8 +232,7 @@ void PmergeMe::sortDeque()
     _dequeTime = elapsedMicro(start, end);
 }
 
-void PmergeMe::insertSortedDeque(std::deque<int>& mainChain, int id,
-                                  std::deque<int>& values, size_t rangeEnd)
+void PmergeMe::insertSortedDeque(std::deque<int>& mainChain, int id, std::deque<int>& values, size_t rangeEnd)
 {
     int value = values[id];
     size_t lo = 0;
@@ -254,8 +249,7 @@ void PmergeMe::insertSortedDeque(std::deque<int>& mainChain, int id,
     mainChain.insert(mainChain.begin() + lo, id);
 }
 
-std::deque<int> PmergeMe::mergeInsertSortDeque(std::deque<int> ids,
-                                                std::deque<int>& values)
+std::deque<int> PmergeMe::mergeInsertSortDeque(std::deque<int> ids, std::deque<int>& values)
 {
     if (ids.size() <= 1)
         return ids;
